@@ -8,17 +8,17 @@ const path = require('path')
 //对环境进行判断
 module.exports = {
   dev: {
-    // Paths                  
+    // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {                       
-      '/aaa': {                         //跨域设置点,捕获baseURL="/aaa" 的请求 ,进行替换 
+    proxyTable: {
+      '/aaa': {                         //跨域设置点,捕获baseURL="/aaa" 的请求 ,进行替换
         target: 'http://localhost:8100',// 设置你调用的接口域名和端口号 别忘了加http
         changeOrigin: true,             //是否跨域
         pathRewrite: {
-          '^/aaa': ''                   //这里为替换: axios发出请求为 /aaa+"/hello" ==> http://localhost:8100 + "/hello" 
+          '^/aaa': ''                   //这里为替换: axios发出请求为 /aaa+"/hello" ==> http://localhost:8100 + "/hello"
         }
-      }           
+      }
     },
 
     // Various Dev Server settings
@@ -29,7 +29,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */
