@@ -1,5 +1,5 @@
 <template>
-    <div id="login" >
+    <div id="login">
         <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
             <el-form-item label="账号">
                 <el-input v-model="formLabelAlign.name"></el-input>
@@ -11,7 +11,7 @@
                 <el-input v-model="formLabelAlign.type"></el-input>
             </el-form-item>
         </el-form>
-        <el-button type="primary" @click="req_test()" >点击发送请求</el-button>
+        <el-button type="primary" @click="req_test()">点击发送请求</el-button>
     </div>
 </template>
 
@@ -36,11 +36,11 @@ export default {
             let _this = this;//方法内的this 指向会变
             axios({
                 method: "get",
-                url: "/hello?name="+this.formLabelAlign.name,
+                url: "/hello?name=" + this.formLabelAlign.name,
                 headers: {},
             })
                 .then(function (response) {
-                    console.log("axios接口返回:",response.data);
+                    console.log("axios接口返回:", response.data);
                     console.log("cookie历史数据:", _this.$cookies.get("test"));
 
                     _this.$cookies.set("test", _this.formLabelAlign.region); //时间单位是天
