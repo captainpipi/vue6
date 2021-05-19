@@ -1,4 +1,4 @@
-# clean_vue
+# vue6
 
 > A Vue.js project
 
